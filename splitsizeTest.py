@@ -86,5 +86,13 @@ for name, dataset in datasets.items():
         rankingsC1[key] += np.mean(cvScoresC1)
         rankingsC2[key] += np.mean(cvScoresC2)
 
-print(dict(sorted(rankingsC1.items(), key=lambda x: x[1], reverse=True)))
-print(dict(sorted(rankingsC2.items(), key=lambda x: x[1], reverse=True)))
+rankingsC1 = dict(sorted(rankingsC1.items(), key=lambda x: x[1], reverse=True))
+rankingsC2 = dict(sorted(rankingsC2.items(), key=lambda x: x[1], reverse=True))
+
+c1Df = pd.DataFrame.from_dict(rankingsC1, orient='index')
+c1Df.columns = ["RMSE_MEAN"]
+c2Df = pd.DataFrame.from_dict(rankingsC2, orient='index')
+c2Df.columns = ["RMSE_MEAN"]
+
+c1Df.to_csv("splitsizeRes\\c1.csv")
+c2Df.to_csv("splitsizeRes\\c2.csv")
