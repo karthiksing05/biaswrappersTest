@@ -1,0 +1,41 @@
+,RMSE_MEAN,RMSE_STD,MODEL_CLASS
+RandomWrapper with inner model RandomForestRegressorNone10,-76.45906144969625,20.703290586101208,<biaswrappers.regressor.RandomWrapper object at 0x000001986AECFD08>
+RandomWrapper with inner model RandomForestRegressorNone5,-81.518628668769,27.562811322015808,<biaswrappers.regressor.RandomWrapper object at 0x000001986AEC8748>
+RandomForestRegressorNone10,-84.34922286612199,17.120333723265208,RandomForestRegressor(n_estimators=10)
+RandomForestRegressorNone5,-88.38882206755326,24.419907190750536,RandomForestRegressor(n_estimators=5)
+RandomForestRegressorNone3,-91.68165699804351,10.984385715653119,RandomForestRegressor(n_estimators=3)
+RandomWrapper with inner model RandomForestRegressorNone3,-96.9066032645367,32.464494194085965,<biaswrappers.regressor.RandomWrapper object at 0x000001986AFAC4C8>
+BiasRegressorC1 with inner model RandomForestRegressorNone5,-109.35654877833554,23.237035945112428,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AEAADC8>
+DecisionTreeRegressor10,-112.863259495383,18.225869314350074,DecisionTreeRegressor(max_depth=10)
+RandomWrapper with inner model DecisionTreeRegressor10,-118.73500004236806,20.39580405256516,<biaswrappers.regressor.RandomWrapper object at 0x000001986AF8A248>
+RandomWrapper with inner model DecisionTreeRegressor5,-118.85118813517788,20.780764031939487,<biaswrappers.regressor.RandomWrapper object at 0x000001986AEB35C8>
+BiasRegressorC1 with inner model DecisionTreeRegressor10,-121.84541597935251,46.45748579241549,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AEB3188>
+LinearRegression,-122.04676614886255,43.62633766842146,LinearRegression()
+BiasRegressorC1 with inner model RandomForestRegressorNone3,-124.03714130396868,26.928485158076988,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AF8ADC8>
+BiasRegressorC1 with inner model RandomForestRegressorNone10,-124.4875163243612,31.930870458115884,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AF8A9C8>
+DecisionTreeRegressor5,-125.31265105062384,28.96233563128876,DecisionTreeRegressor(max_depth=5)
+RandomWrapper with inner model Lasso,-126.10979550656796,37.8259730572061,<biaswrappers.regressor.RandomWrapper object at 0x000001986AEA9108>
+Lasso,-129.42745091511182,31.275115970132006,Lasso(tol=0.002)
+RandomWrapper with inner model LinearRegression,-129.54465629150144,24.873805694416987,<biaswrappers.regressor.RandomWrapper object at 0x000001986AF2BE88>
+Ridge,-129.6000450709348,33.777150073681824,Ridge()
+BiasRegressorC1 with inner model Lasso,-130.14142439180856,32.44479665797704,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AF2B548>
+BiasRegressorC1 with inner model LinearRegression,-132.44574465750833,27.305891053628425,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AEBE548>
+BiasRegressorC1 with inner model DecisionTreeRegressor5,-136.9431232154633,47.04579208824096,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AF28488>
+RandomWrapper with inner model Ridge,-137.03210469249143,23.51107107884979,<biaswrappers.regressor.RandomWrapper object at 0x000001986AFAC2C8>
+BiasRegressorC1 with inner model Ridge,-140.98805440080167,22.74598778079008,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AEA9248>
+RandomWrapper with inner model DecisionTreeRegressor3,-153.24478488001338,19.990747725465795,<biaswrappers.regressor.RandomWrapper object at 0x000001986AF28048>
+BiasRegressorC1 with inner model DecisionTreeRegressor3,-158.8849873996862,38.76798341743456,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AEAFA08>
+DecisionTreeRegressor3,-160.85690892618933,36.760609924180606,DecisionTreeRegressor(max_depth=3)
+BiasRegressorC2 with inner model LinearRegression,-161.24591333141106,39.4480175362142,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AEC13C8>
+BiasRegressorC2 with inner model Lasso,-164.5169709771065,51.77962401078257,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AEA9E48>
+BiasRegressorC2 with inner model RandomForestRegressorNone10,-211.7441515644429,50.206039145786484,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AEC2608>
+BiasRegressorC2 with inner model RandomForestRegressorNone5,-214.4708371392509,66.15351881392137,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AF8AA88>
+BiasRegressorC2 with inner model RandomForestRegressorNone3,-236.5756524587639,92.56348137260828,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AFAC488>
+BiasRegressorC2 with inner model DecisionTreeRegressor3,-244.60561250793876,56.06214551243614,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AF28E48>
+BiasRegressorC2 with inner model DecisionTreeRegressor5,-262.5183547562073,76.62776838947008,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AEB3408>
+BiasRegressorC2 with inner model DecisionTreeRegressor10,-268.13940687108357,68.22612366831308,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AF8A048>
+ElasticNet,-277.37388045636436,71.15003715969144,ElasticNet()
+BiasRegressorC2 with inner model Ridge,-279.9704682946613,63.59115495905627,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AFACA48>
+RandomWrapper with inner model ElasticNet,-281.3104541841251,52.20119644138922,<biaswrappers.regressor.RandomWrapper object at 0x000001986AEAFB08>
+BiasRegressorC1 with inner model ElasticNet,-282.3526442871024,67.56905792622868,<biaswrappers.regressor.BiasRegressorC1 object at 0x000001986AFAC548>
+BiasRegressorC2 with inner model ElasticNet,-306.22371830308356,42.515463041017945,<biaswrappers.regressor.BiasRegressorC2 object at 0x000001986AEAFCC8>
