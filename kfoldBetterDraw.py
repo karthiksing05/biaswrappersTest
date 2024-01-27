@@ -69,41 +69,26 @@ def neg_rms_error(estimator, X, y):
     mse = mean_squared_error(y, y_pred)
     return -1 * np.sqrt(mse)
 
+cols = ["Raw Model RMSE", "C1 RMSE", "C2 RMSE", "RandomWrapper RMSE"]
+
 for name, dataset in datasets.items():
     X, y = dataset
     cv = KFold(n_splits=10, shuffle=True)
 
     scores = {}
     for xmodel in reg_models:
+        key = get_model_name(xmodel)
+        key += str(xmodel.get_params().get('max_depth', ""))
+        key += str(xmodel.get_params().get('n_estimators', ""))
+        scores[key] = []
         models = [BiasRegressorC1(model=xmodel, split_size=0.65), BiasRegressorC2(model=xmodel, postModel=copy.deepcopy(xmodel), split_size=0.1), RandomWrapper(model=xmodel), xmodel]
-        for model in models:
+        for i, model in enumerate(models):
             cvScores = cross_val_score(model, X, y, scoring=neg_rms_error, cv=cv, n_jobs=1)
 
-            key = get_model_name(model)
-            try:
-                key += str(model.get_params().get('max_depth', ""))
-                key += str(model.get_params().get('n_estimators', ""))
-            except:
-                pass
-            try:
-                key += " with inner model " + get_model_name(model.model)
-                key += str(model.model.get_params().get('max_depth', ""))
-                key += str(model.model.get_params().get('n_estimators', ""))
-            except:
-                pass
-
-            scores[key] = [np.mean(cvScores), np.std(cvScores), model]
+            scores[key].append(-1 * np.mean(cvScores))
 
     modeldf = pd.DataFrame.from_dict(scores, orient='index').sort_values(0, ascending=False)
-    modeldf.columns = ['RMSE_MEAN', 'RMSE_STD', 'MODEL_CLASS']
-
-    dfd = modeldf.to_dict()
-    best_model = str(max(dfd["RMSE_MEAN"], key=dfd["RMSE_MEAN"].get))
-    model = dfd['MODEL_CLASS'][best_model]
-    print("Best Model for {}: {}\n".format(name, best_model))
-    print("Top 5 models, sorted by RMSE:")
-    print(modeldf.head())
-    print("-----------------------------------------------")
-    modeldf.to_csv(f"res\\{name}.csv")
+    modeldf.columns = cols
+    modeldf.to_csv(f"resDraw\\{name}.csv")
 
 print("Saved all to CSV! @ res")

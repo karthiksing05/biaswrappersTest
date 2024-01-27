@@ -67,7 +67,7 @@ for i, model in enumerate(reg_models):
     y_pred = model.predict(X_test)
     if list(y_pred.shape)[0] == 1:
         y_pred = np.array([np.array(x) for x in y_pred[0]])
-    
+
     key = get_model_name(model)
 
     plt.plot(X_test, y_pred, color=colors[i], label=key)
