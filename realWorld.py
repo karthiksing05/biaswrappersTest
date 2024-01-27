@@ -33,7 +33,7 @@ df = df.reset_index().rename(columns={"index":"date"})
 
 df.dropna(inplace=True)
 
-for lag in range(0, 3):
+for lag in [0, 2, 5, 20]:
 
     # Add previous n-values
     for i in range(lag):
@@ -44,12 +44,12 @@ for lag in range(0, 3):
         df.dropna(inplace=True)
 
     innerModel = LinearRegression()
-    bc2 = BiasRegressorC2(model=copy.deepcopy(innerModel), postModel=copy.deepcopy(innerModel), split_size=0.6)
+    bc2 = BiasRegressorC2(model=copy.deepcopy(innerModel), postModel=copy.deepcopy(innerModel), split_size=0.3)
 
     X = df.drop(label, axis=1).values
     y = df[label].values.reshape(-1, 1)
 
-    trainsize = 0.8
+    trainsize = 0.7
 
     X_train = X[:int(len(X) * trainsize)]
     X_test = X[int(len(X) * trainsize):]
